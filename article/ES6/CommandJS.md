@@ -117,5 +117,4 @@ console.log(info);
 从上面的过程中，我们还可以看出，`CommandJS` 的加载方式是同步的方式。
 
 
-## ES6 Module
 
