@@ -4,8 +4,7 @@
   "description": "这是我记录博客的地方，希望能多写一些技术博客，JS、ES、React、Vue等",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "husky install"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -16,15 +15,5 @@
   "bugs": {
     "url": "https://github.com/hzzzzzzzq/Blog/issues"
   },
-  "homepage": "https://github.com/hzzzzzzzq/Blog#readme",
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm test",
-      "pre-push": "npm test",
-      "...": "..."
-    }
-  },
-  "devDependencies": {
-    "husky": "^7.0.4"
-  }
+  "homepage": "https://github.com/hzzzzzzzq/Blog#readme"
 }
