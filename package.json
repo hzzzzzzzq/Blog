@@ -4,7 +4,8 @@
   "description": "这是我记录博客的地方，希望能多写一些技术博客，JS、ES、React、Vue等",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,20 @@
   "bugs": {
     "url": "https://github.com/hzzzzzzzq/Blog/issues"
   },
-  "homepage": "https://github.com/hzzzzzzzq/Blog#readme"
+  "homepage": "https://github.com/hzzzzzzzq/Blog#readme",
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json}": [
+      "prettier --write",
+      "eslint",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^15.0.0",
+    "@commitlint/config-conventional": "^15.0.0",
+    "eslint": "^8.4.1",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.1.2",
+    "prettier": "^2.5.1"
+  }
 }
