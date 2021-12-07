@@ -19,7 +19,9 @@
   "homepage": "https://github.com/hzzzzzzzq/Blog#readme",
   "husky": {
     "hooks": {
-      "pre-commit": "echo \"git commit trigger husky pre-commit hook\" "
+      "pre-commit": "npm test",
+      "pre-push": "npm test",
+      "...": "..."
     }
   },
   "devDependencies": {
