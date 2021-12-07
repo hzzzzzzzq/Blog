@@ -1,4 +1,1 @@
-
-
-## JavaScript之作用域链
-
+## JavaScript 之作用域链

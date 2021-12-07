@@ -1,12 +1,12 @@
 ### call/apply/bind
 
-### 构造函数和this
+### 构造函数和 this
 
 这方面最直接的例题为：
 
 ```javascript
 function Foo() {
-  this.bar = "Tom"
+  this.bar = 'Tom';
 }
 const instance = new Foo();
 console.log(instance.bar);
@@ -26,8 +26,8 @@ console.log(instance.bar);
 以上过程，也可以用代码表述：
 
 ```javascript
-var obj  = {}
-obj.__proto__ = Foo.prototype
+var obj = {};
+obj.__proto__ = Foo.prototype;
 Foo.call(obj);
 ```
 
@@ -36,10 +36,10 @@ Foo.call(obj);
 需要指出的是，如果在构造函数中出现了显式 `return` 的情况，那么需要注意分为两种场景：
 
 ```javascript
-function Foo(){
-    this.user = "Tom"
-    const o = {}
-    return ol
+function Foo() {
+  this.user = 'Tom';
+  const o = {};
+  return ol;
 }
 const instance = new Foo();
 console.log(instance.user);
@@ -48,9 +48,9 @@ console.log(instance.user);
 将会输出 `undefined`，此时 `instance` 是返回的空对象 `o`。
 
 ```javascript
-function Foo(){
-    this.user = "Tom"
-    return 1
+function Foo() {
+  this.user = 'Tom';
+  return 1;
 }
 const instance = new Foo();
 console.log(instance.user);

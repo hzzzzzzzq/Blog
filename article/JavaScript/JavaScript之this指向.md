@@ -1,6 +1,6 @@
 ## this-指向
 
-### 普通函数的this指向
+### 普通函数的 this 指向
 
 ```javascript
 let obj = {
@@ -48,15 +48,15 @@ newFun(); // 0
 // index.html
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <script src="./this.js"></script>
-</body>
+  </body>
 </html>
 ```
 
@@ -78,54 +78,55 @@ newFun(); // 0
 4. 一般由上下文对象调用，绑定在该对象上；
 5. 箭头函数中，根据外层上下文绑定的 `this` 决定 `this` 指向。
 
-
 #### 案例
+
 **全局环境下的 this**
 
 严格模式下为 `undefined`，普通环境下指向的是 window
 
 ```javascript
-function f1 () {
-    console.log(this)
+function f1() {
+  console.log(this);
 }
-function f2 () {
-    'use strict'
-    console.log(this)
+function f2() {
+  'use strict';
+  console.log(this);
 }
-f1() // window 对象
-f2() // undefined
+f1(); // window 对象
+f2(); // undefined
 ```
 
 来一个进阶题目
 
 ```javascript
 const foo = {
-    bar: 10,
-    fn: function() {
-       console.log(this)
-       console.log(this.bar)
-    }
-}
+  bar: 10,
+  fn: function () {
+    console.log(this);
+    console.log(this.bar);
+  },
+};
 var fn1 = foo.fn;
 fn1();
 ```
+
 这时候的 `this` 仍然指向的是 `window`，所以 `this.bar` 输出 `undefined`
 
-### 箭头函数this指向
+### 箭头函数 this 指向
 
 箭头函数的 this 指向就是 **在定义函数时所在的作用域指向的对象**，而不是在调用时确认。我们来看段代码验证一下。
 
 ```javascript
-window.a = '我是 window 下的 a'
+window.a = '我是 window 下的 a';
 let obj = {
   a: '我是 obj 下的 a',
   func: () => {
-    return this.a
-  }
-}
+    return this.a;
+  },
+};
 console.log(obj.func()); // 我是 window 下的 a
 let fun = obj.func;
-console.log(fun()) // 我是 window 下的 a
+console.log(fun()); // 我是 window 下的 a
 ```
 
 这里的 `func` 函数，因为在定义时就已经决定了 this 的指向，而所在的作用域在定义时就是在 `全局 window 环境` 下，因此指向的是 `window 对象`，无论是 `obj` 调用或者是 `window` 调用输出都是在 `window 环境` 下了.
@@ -140,17 +141,15 @@ let obj = {
   a: '我是 obj 下的 a',
   func: function () {
     return () => {
-      console.log(this.a)
-		};
-	},
+      console.log(this.a);
+    };
+  },
 };
 let fun = obj.func();
-fun() // 我是 obj 下的 a
+fun(); // 我是 obj 下的 a
 ```
 
 这里我们在定义时，所在的作用域其实就是 外层 `function 作用域`，而外层 `function` 指向的对象就是 `obj 对象`，所以输出的结果就是 `我是 obj 下的 a`
-
-
 
 ### 小结
 
@@ -159,4 +158,3 @@ fun() // 我是 obj 下的 a
 **普通函数：`this` 指向的是调用时的对象**
 
 **箭头函数：`this` 指向的是定义函数时所在的作用域指向的对象**
-
