@@ -1,65 +1,120 @@
-### call/apply/bind
+# call/apply/bind
 
-### 构造函数和 this
+## call bind apply 的区别
 
-这方面最直接的例题为：
+首先，我们先来了解一下 `call`，`apply`，`bind` 的区别，方便我们去手写实现自己的 `call、apply、bind`
+
+| 区别         | bind                           | call                           | apply                          |
+| ------------ | ------------------------------ | ------------------------------ | ------------------------------ |
+| 是否立即调用 | 否                             | 是                             | 是                             |
+| 参数一       | 指定的对象（该函数的执行上下文 | 指定的对象（该函数的执行上下文 | 指定的对象（该函数的执行上下文 |
+| 其他参数     | 后面的参数都是传入函数的值     | 后面的参数都是传入函数的值     | 只有两个参数，第二个参数是数组 |
+
+## call 实现
+
+> 1. 判断调用对象是否为函数，即使我们是定义在函数的原型上的，但是可能出现使用 `call` 等方式调用的情况
+> 2. 判断传入上下文对象是否存在，如果不存在，则设置为 `window`
+> 3. 处理传入的参数，截取第一个参数后的所有参数
+> 4. 将函数作为上下文对象的一个属性
+> 5. 使用上下文对象来调用这个方法，并保存返回结果
+> 6. 删除刚才新增的属性
+> 7. 返回结果
 
 ```javascript
-function Foo() {
-  this.bar = 'Tom';
+Function.prototype.myCall = function (context) {
+  if (typeof this !== 'function') {
+    // 判断，在手写过程中 可以不需要
+    console.log('只有函数可以调用 myCall');
+    return;
+  }
+  context = context || window; // 判断上下文对象是否存在
+  context.fn = this; // 将函数作为上下文的一个属性
+  argus = [...arguments].slice(1); // 获取传入的参数，从第二个参数起的所有参数
+  const result = context.fn(...argus); // 执行该函数，并使用上面的参数，返回结果
+  delete context.fn; // 删除新增对象
+  return result;
+};
+// 测试一下代码
+var value = 2;
+let obj = {
+  value: 1,
+};
+function test(name, age) {
+  console.log(this.value);
+  return {
+    value: this.value,
+    name: name,
+    age: age,
+  };
 }
-const instance = new Foo();
-console.log(instance.bar);
+console.log(test.myCall(obj, 'hzq', 18));
+// 1
+// {
+//   "value": 1,
+//   "name": "hzq",
+//   "age": 18
+// }
 ```
 
-答案将会输出 `Tom`。
+## apply 实现
 
-但是这样的场景往往伴随着下一个问题：`new` 操作符调用构造函数，具体做了什么？
+我们首先了解了三者的区别，我们发现 `apply` 与 `call` 的区别，就在于传入的参数，针对这一区别，我们开始实现 `apply`，就只需要对 `call` 的代码进行部分修改即可。
 
-以下供参考：
-
-1. 创建一个新的对象；
-2. 将构造函数的 this 指向这个新对象；
-3. 为这个对象添加属性、方法等；
-4. 最终返回新对象。
-
-以上过程，也可以用代码表述：
+> 1. 判断调用对象是否为函数，即使我们是定义在函数的原型上的，但是可能出现使用 `call` 等方式调用的情况
+> 2. 判断传入上下文对象是否存在，如果不存在，则设置为 `window`
+> 3. 将函数作为上下文对象的一个属性
+> 4. 判断参数值是否传入
+> 5. 使用上下文对象来调用这个方法，并保存返回结果
+> 6. 删除刚才新增的属性
+> 7. 返回结果
 
 ```javascript
-var obj = {};
-obj.__proto__ = Foo.prototype;
-Foo.call(obj);
+Function.prototype.myApply = function (context, arr) {
+  if (typeof this !== 'function') {
+    console.log('只有函数可以调用 myApply');
+    return;
+  }
+  context = context || window;
+  context.fn = this;
+  let result = null;
+  if (!arr) {
+    result = context.fn();
+  } else {
+    result = context.fn(...arr);
+  }
+  delete context.fn;
+  return result;
+};
+// 测试与 call 类似，只是修改了传入参数为数组, 打印结果相同
+console.log(test.myApply(obj, ['hzq', 18]));
 ```
 
-当然，这里对 `new` 的模拟是一个简单基本版的。
+## bind 实现
 
-需要指出的是，如果在构造函数中出现了显式 `return` 的情况，那么需要注意分为两种场景：
+> 1. 判断调用对象是否为函数，即使我们是定义在函数的原型上的，但是可能出现使用 `call` 等方式调用的情况
+> 2. 保存当前函数的引用，获取其余传入参数值
+> 3. 创建一个函数返回
+> 4. 函数内部使用 `apply` 来绑定函数调用，需要判断函数作为构造函数的情况，这个时候需要传入当前函数的 `this` 给 `apply` 调用，其余情况都传入指定的上下文对象
 
 ```javascript
-function Foo() {
-  this.user = 'Tom';
-  const o = {};
-  return ol;
-}
-const instance = new Foo();
-console.log(instance.user);
+Function.prototype.myBind = function (context) {
+  let argus = [].slice.call(arguments, 1); // 获得第二个参数开始的全部参数
+  let fn = function () {}; // 创建一个 fn 作为中间件，防止修改  fBound.prototype 时，也会直接修改绑定函数的 prototype
+  let fBound = function () {
+    let bindArgus = [].slice.call(arguments);
+    return this.apply(
+      this instanceof fn ? this : context,
+      argus.concat(bindArgus)
+    );
+  };
+  fn.prototype = this.prototype;
+  fBound.prototype = new fn();
+  return fBound;
+};
 ```
 
-将会输出 `undefined`，此时 `instance` 是返回的空对象 `o`。
+## 文章参考
 
-```javascript
-function Foo() {
-  this.user = 'Tom';
-  return 1;
-}
-const instance = new Foo();
-console.log(instance.user);
-```
+[JavaScript 深入之 call 和 apply 的模拟实现](https://github.com/mqyqingfeng/Blog/issues/11)
 
-将会输出 Tom，也就是说此时 instance 是返回的目标对象实例 this。
-
-结论：
-
-> 如果构造函数中显式返回一个值，且返回的是一个对象，那么 this 就指向这个返回的对象；
-
-> 如果返回的不是一个对象，那么 this 仍然指向实例。
+[JavaScript 深入之 bind 的模拟实现](https://github.com/mqyqingfeng/Blog/issues/12)
