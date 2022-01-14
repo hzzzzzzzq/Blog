@@ -21,7 +21,7 @@ module.exports.weight = 178;
 
 我们使用的是 `module.exports` 的导出方式，使用的是单个导出。
 
-而我们在导入文件中，可以使用 require 进入导入，然后使用 `info. ` 进行调用。
+而我们在导入文件中，可以使用 require 进入导入，然后使用 `info.` 进行调用。
 
 ```javascript
 let info = require('./commandJs.js');
