@@ -8,7 +8,7 @@
 
 2. [Git 系列之Git 实战](https://github.com/hzzzzzzzq/Blog/issues/16)
 
-3. [Git 系列之Git格式化 commit log](17)
+3. [Git 系列之Git格式化 commit log](https://github.com/hzzzzzzzq/Blog/issues/17)
 
 ## ES 6 系列
 
@@ -39,24 +39,24 @@
 
 ## CSS 系列
 
-1. [CSS系列之盒模型]()
+1. [CSS 系列之盒模型]()
 
-2. [CSS系列之CSS选择器]()
+2. [CSS 系列之CSS选择器]()
 
-3. [CSS系列之BFC]()
+3. [CSS 系列之BFC]()
 
-4. [CSS系列之position]()
+4. [CSS 系列之position]()
 
-5. [CSS系列之flex]()
+5. [CSS 系列之flex]()
 
-6. [CSS系列之css 优先级]()
+6. [CSS 系列之css 优先级]()
 
-7. [CSS系列之双飞翼/圣杯布局]()
+7. [CSS 系列之双飞翼/圣杯布局]()
 
-8. [CSS系列之div 居中]()
+8. [CSS 系列之div 居中]()
 
-9. [CSS系列之css3 新特性]()
+9. [CSS 系列之css3 新特性]()
 
-10. [CSS系列之float]()
+10. [CSS 系列之float]()
 
 ## 待补充 。。。。。。。。静态后续
