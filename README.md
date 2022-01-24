@@ -2,6 +2,13 @@
 
 这里是我记录博客的地方，现在已有内容， ES 6 的基础教程、git 基础相关教学，以及实战。
 
+## 个人博客搭建
+
+1. [Hexo + GithubPages + NexT 主题快速搭建个人网站]()
+2. [Hexo 各类配置项]()
+3. [NexT 主题功能(阅读时间、浏览量、看板娘、打赏等各类功能)]()
+4. [Hexo - NexT 主题下配置 gitalk/Disqus 评论系统]()
+
 ## Git 系列
 
 1. [Git 系列之Git 命令](https://github.com/hzzzzzzzq/Blog/issues/15)
