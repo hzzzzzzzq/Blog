@@ -90,4 +90,4 @@
 10. [深入理解 JavaScript 系列（10）：new操作](https://github.com/hzzzzzzzq/Blog/issues/51)
 
 
-## 待补充 。。。。。。。。静态后续
+## 待补充 。。。。。。。。静待后续。。。。。。。。。。
