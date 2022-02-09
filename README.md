@@ -4,13 +4,13 @@
 
 ## 个人博客搭建
 
-1. [Hexo + GithubPages + NexT 主题快速搭建个人网站]()
+1. [Hexo + GithubPages + NexT 主题快速搭建个人网站](https://github.com/hzzzzzzzq/Blog/issues/38)
 
-2. [Hexo 各类配置项]()
+2. [Hexo 各类配置项](https://github.com/hzzzzzzzq/Blog/issues/39)
 
-3. [NexT 主题功能(阅读时间、浏览量、看板娘、打赏等各类功能)]()
+3. [NexT 主题功能(阅读时间、浏览量、看板娘、打赏等各类功能)](https://github.com/hzzzzzzzq/Blog/issues/40)
 
-4. [Hexo - NexT 主题下配置 gitalk/Disqus 评论系统]()
+4. [Hexo - NexT 主题下配置 gitalk/Disqus 评论系统](https://github.com/hzzzzzzzq/Blog/issues/41)
 
 ## Git 系列
 
