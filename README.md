@@ -69,25 +69,25 @@
 10. [CSS 系列之float](https://github.com/hzzzzzzzq/Blog/issues/37)
 
 ## JavaScript 深入系列
-1. [JavaScript 深入之原型与原型链]()
+1. [深入理解 JavaScript 系列（1）：原型与原型链](https://github.com/hzzzzzzzq/Blog/issues/42)
 
-2. [JavaScript 深入之执行上下文栈]()
+2. [深入理解 JavaScript 系列（2）：执行上下文栈](https://github.com/hzzzzzzzq/Blog/issues/43)
 
-3. [JavaScript 深入之变量对象]()
+3. [深入理解 JavaScript 系列（3）：变量对象](https://github.com/hzzzzzzzq/Blog/issues/44)
 
-4. [JavaScript 深入之作用域链]()
+4. [深入理解 JavaScript 系列（4）：作用域链](https://github.com/hzzzzzzzq/Blog/issues/45)
 
-5. [JavaScript 深入之 this]()
+5. [深入理解 JavaScript 系列（5）：this](https://github.com/hzzzzzzzq/Blog/issues/46)
 
-6. [JavaScript 深入之执行上下文]()
+6. [深入理解 JavaScript 系列（6）：执行上下文](https://github.com/hzzzzzzzq/Blog/issues/47)
 
-7. [JavaScript 深入之闭包]()
+7. [深入理解 JavaScript 系列（7）：闭包](https://github.com/hzzzzzzzq/Blog/issues/48)
 
-8. [JavaScript 深入之call和apply函数]()
+8. [深入理解 JavaScript 系列（8）：call和apply函数](https://github.com/hzzzzzzzq/Blog/issues/49)
 
-9. [JavaScript 深入之bind函数]()
+9. [深入理解 JavaScript 系列（9）：bind函数](https://github.com/hzzzzzzzq/Blog/issues/50)
 
-10. [JavaScript 深入之new操作]()
+10. [深入理解 JavaScript 系列（10）：new操作](https://github.com/hzzzzzzzq/Blog/issues/51)
 
 
 ## 待补充 。。。。。。。。静态后续
