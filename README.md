@@ -68,4 +68,24 @@
 
 10. [CSS 系列之float](https://github.com/hzzzzzzzq/Blog/issues/37)
 
+## JavaScript 深入系列
+1. [JavaScript 深入之原型与原型链]()
+
+2. [JavaScript 深入之执行上下文栈]()
+
+3. [JavaScript 深入之变量对象]()
+
+4. [JavaScript 深入之 this]()
+
+5. [JavaScript 深入之作用域链]()
+
+6. [JavaScript 深入之闭包]()
+
+7. [JavaScript 深入之call和apply函数]()
+
+8. [JavaScript 深入之bind函数]()
+
+9. [JavaScript 深入之new操作]()
+
+
 ## 待补充 。。。。。。。。静态后续
