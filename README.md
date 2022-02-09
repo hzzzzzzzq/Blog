@@ -75,17 +75,19 @@
 
 3. [JavaScript 深入之变量对象]()
 
-4. [JavaScript 深入之 this]()
+4. [JavaScript 深入之作用域链]()
 
-5. [JavaScript 深入之作用域链]()
+5. [JavaScript 深入之 this]()
 
-6. [JavaScript 深入之闭包]()
+6. [JavaScript 深入之执行上下文]()
 
-7. [JavaScript 深入之call和apply函数]()
+7. [JavaScript 深入之闭包]()
 
-8. [JavaScript 深入之bind函数]()
+8. [JavaScript 深入之call和apply函数]()
 
-9. [JavaScript 深入之new操作]()
+9. [JavaScript 深入之bind函数]()
+
+10. [JavaScript 深入之new操作]()
 
 
 ## 待补充 。。。。。。。。静态后续
