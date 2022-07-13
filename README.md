@@ -2,6 +2,8 @@
 
 这里是我记录博客的地方，现在已有内容， ES 6 的基础教程、git 基础相关教学，以及实战。
 
+也可以去我的个人网站观看 [点击这里进入!!!](https://hzzzzzzzq.github.io/)
+
 ## 个人博客搭建
 
 1. [Hexo + GithubPages + NexT 主题快速搭建个人网站](https://github.com/hzzzzzzzq/Blog/issues/38)
